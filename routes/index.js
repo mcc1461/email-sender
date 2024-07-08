@@ -8,6 +8,46 @@ mcRouter.get('/countries', (req, res) => {
 mcRouter.get('/cities', (req, res) => {
     res.send(["Istanbul", "New York", "Berlin", "Paris", "Rome", "Madrid", "London", "Athens", "Moscow", "Beijing", "Tokyo", "Seoul", "Brasilia", "Buenos Aires"]);
 }   );
+mcRouter.get('/capitals', (req, res) => {
+    res.send(["Ankara", "Washington D.C.", "Berlin", "Paris", "Rome", "Madrid", "London", "Athens", "Moscow", "Beijing", "Tokyo", "Seoul", "Brasilia", "Buenos Aires"]);
+}
+);
+
+mcRouter.get('/capitals/:country', (req, res) => {
+    const country = req.params.country;
+    if (country === "Turkey") {
+        res.send("Ankara");
+    } else if (country === "USA") {
+        res.send("Washington D.C.");
+    } else if (country === "Germany") {
+        res.send("Berlin");
+    } else if (country === "France") {
+        res.send("Paris");
+    } else if (country === "Italy") {
+        res.send("Rome");
+    } else if (country === "Spain") {
+        res.send("Madrid");
+    } else if (country === "UK") {
+        res.send("London");
+    } else if (country === "Greece") {
+        res.send("Athens");
+    } else if (country === "Russia") {
+        res.send("Moscow");
+    } else if (country === "China") {
+        res.send("Beijing");
+    } else if (country === "Japan") {
+        res.send("Tokyo");
+    } else if (country === "South Korea") {
+        res.send("Seoul");
+    } else if (country === "Brazil") {
+        res.send("Brasilia");
+    } else if (country === "Argentina") {
+        res.send("Buenos Aires");
+    } else {
+        res.send("No capital city found");
+    }
+}
+);
 
 mcRouter.get('/cities/:country', (req, res) => {
     const country = req.params.country;
@@ -29,7 +69,6 @@ mcRouter.get('/cities/:country', (req, res) => {
             res.send(["Athens", "Thessaloniki", "Patras", "Heraklion", "Larissa", "Volos", "Rhodes", "Ioannina", "Chania", "Chalcis", "Kavala", "Trikala", "Serres", "Lamia", "Alexandroupoli", "Katerini"]);
         } else if (country === "Russia") {
             res.send(["Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Nizhny Novgorod", "Samara", "Omsk", "Kazan", "Chelyabinsk", "Rostov-on-Don", "Ufa", "Volgograd", "Perm", "Krasnoyarsk", "Voronezh", "Saratov"]);
-
         } else if (country === "China") {
             res.send(["Beijing", "Shanghai", "Guangzhou", "Shenzhen", "Tianjin", "Wuhan", "Dongguan", "Chongqing", "Chengdu", "Nanjing", "Shenyang", "Hangzhou", "Xi'an", "Harbin", "Suzhou", "Dalian"]);
         } else if (country === "Japan") {

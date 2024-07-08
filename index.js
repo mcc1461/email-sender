@@ -1,10 +1,10 @@
 const express = require('express');
 const mcRouter = require('./routes');
-
+const port = process.env.PORT || 7070;
 
 const app = express();
 
-const port = process.env.PORT || 7070;
+app.use(express.json());
 
 
 app.use('/', mcRouter);

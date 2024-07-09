@@ -1,5 +1,5 @@
 
-# City and Country Info API 
+# City and Country Info API
 
 ## ~ EXPRESS ROUTERS ~
 
